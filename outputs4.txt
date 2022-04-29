@@ -1,0 +1,139 @@
+sample data from Companies: 
+1	Hall-Clark	aggregates
+2	Jacobs-Jones	aggregates
+3	Combs, Sosa and Holland	civil
+4	Matthews-Davila	waste
+5	Carpenter, Snyder and West	aggregates
+
+
+show tables;
++---------------+
+| Tables_in_pda |
++---------------+
+| agents        |
+| companies     |
+| customers     |
+| handle        |
+| manage        |
+| open          |
+| tickets       |
+| worksat       |
++---------------+
+
+describe Agents;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| agentID   | int         | NO   | PRI | NULL    |       |
+| agentName | varchar(20) | NO   |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+select count(*) from Agents;
++----------+
+| count(*) |
++----------+
+|        7 |
++----------+
+
+describe Tickets;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| ticketID   | int         | NO   | PRI | NULL    |       |
+| category   | varchar(20) | NO   |     | NULL    |       |
+| timeOpened | datetime    | YES  |     | NULL    |       |
+| timeClosed | datetime    | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+select count(*) from Tickets;
++----------+
+| count(*) |
++----------+
+|    15000 |
++----------+
+
+describe Customers;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| customerID   | int         | NO   | PRI | NULL    |       |
+| customerName | varchar(40) | NO   |     | NULL    |       |
+| jobTitle     | varchar(20) | NO   |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+select count(*) from Customers;
++----------+
+| count(*) |
++----------+
+|    10000 |
++----------+
+
+describe Companies;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| companyID   | int         | NO   | PRI | NULL    |       |
+| companyName | varchar(40) | NO   |     | NULL    |       |
+| industry    | varchar(20) | NO   |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+select count(*) from Companies;
++----------+
+| count(*) |
++----------+
+|      500 |
++----------+
+
+describe Handle;
++----------+------+------+-----+---------+-------+
+| Field    | Type | Null | Key | Default | Extra |
++----------+------+------+-----+---------+-------+
+| agentID  | int  | NO   | PRI | NULL    |       |
+| ticketID | int  | NO   | PRI | NULL    |       |
+| rating   | int  | NO   | PRI | NULL    |       |
++----------+------+------+-----+---------+-------+
+select count(*) from Handle;
++----------+
+| count(*) |
++----------+
+|    15000 |
++----------+
+
+describe Open;
++------------+------+------+-----+---------+-------+
+| Field      | Type | Null | Key | Default | Extra |
++------------+------+------+-----+---------+-------+
+| customerID | int  | NO   | PRI | NULL    |       |
+| ticketID   | int  | NO   | PRI | NULL    |       |
++------------+------+------+-----+---------+-------+
+select count(*) from Open;
++----------+
+| count(*) |
++----------+
+|    15000 |
++----------+
+
+describe WorksAt;
++------------+------+------+-----+---------+-------+
+| Field      | Type | Null | Key | Default | Extra |
++------------+------+------+-----+---------+-------+
+| customerID | int  | NO   | PRI | NULL    |       |
+| companyID  | int  | NO   | PRI | NULL    |       |
++------------+------+------+-----+---------+-------+
+select count(*) from WorksAt;
++----------+
+| count(*) |
++----------+
+|    10000 |
++----------+
+
+describe Manage;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| agentID   | int         | NO   | PRI | NULL    |       |
+| companyID | int         | NO   | PRI | NULL    |       |
+| health    | varchar(10) | NO   | PRI | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+select count(*) from Manage;
++----------+
+| count(*) |
++----------+
+|      500 |
++----------+
