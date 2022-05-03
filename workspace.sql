@@ -11,7 +11,7 @@ create table Agents (
 
 load data local infile "C:/Users/eliza/github/COMP3421/agents_data.txt" into table Agents
 fields terminated by "\t"
-lines terminated by "\n";
+lines terminated by "\r\n";
 
 drop table if exists Tickets;
 create table Tickets (
@@ -24,7 +24,7 @@ create table Tickets (
 
 load data local infile "C:/Users/eliza/github/COMP3421/tickets_data.txt" into table Tickets
 fields terminated by "\t"
-lines terminated by "\n";
+lines terminated by "\r\n";
 
 drop table if exists Customers;
 create table Customers (
@@ -36,7 +36,7 @@ create table Customers (
 
 load data local infile "C:/Users/eliza/github/COMP3421/customers_data.txt" into table Customers
 fields terminated by "\t"
-lines terminated by "\n";
+lines terminated by "\r\n";
 
 drop table if exists Companies;
 create table Companies(
@@ -48,7 +48,7 @@ create table Companies(
 
 load data local infile "C:/Users/eliza/github/COMP3421/companies_data.txt" into table Companies
 fields terminated by "\t"
-lines terminated by "\n";
+lines terminated by "\r\n";
 
 drop table if exists Handle;
 create table Handle(
@@ -62,7 +62,7 @@ create table Handle(
 
 load data local infile "C:/Users/eliza/github/COMP3421/handles_data.txt" into table Handle
 fields terminated by "\t"
-lines terminated by "\n";
+lines terminated by "\r\n";
 
 drop table if exists Open;
 create table Open(
@@ -75,7 +75,7 @@ create table Open(
 
 load data local infile "C:/Users/eliza/github/COMP3421/opens_data.txt" into table Open
 fields terminated by "\t"
-lines terminated by "\n";
+lines terminated by "\r\n";
 
 drop table if exists WorksAt;
 create table WorksAt(
@@ -88,7 +88,7 @@ create table WorksAt(
 
 load data local infile "C:/Users/eliza/github/COMP3421/worksat_data.txt" into table WorksAt
 fields terminated by "\t"
-lines terminated by "\n";
+lines terminated by "\r\n";
 
 drop table if exists Manage;
 create table Manage(
@@ -102,4 +102,4 @@ create table Manage(
 
 load data local infile "C:/Users/eliza/github/COMP3421/manages_data.txt" into table Manage
 fields terminated by "\t"
-lines terminated by "\n";
+lines terminated by "\r\n";
