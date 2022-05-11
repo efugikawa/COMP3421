@@ -2,6 +2,8 @@ drop database if exists pda;
 create database pda;
 use pda;
 
+set global local_infile = 1;
+
 drop table if exists Agents;
 create table Agents (
   agentID int,
@@ -43,6 +45,8 @@ create table Companies(
   companyID int,
   companyName varchar(40) NOT NULL,
   industry varchar(20) NOT NULL,
+  enrRank int NOT NULL,
+  index(enrRank),
   Primary Key (companyID)
 ) ;
 

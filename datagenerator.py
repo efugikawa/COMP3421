@@ -48,7 +48,7 @@ outfile.close()
 #Companies: company ID, company name, industry
 outfile = open("companies_data.txt", "w")
 for i in range(numCompanies):
-    s = str(i+1) + "\t" + fake.company() + "\t" + random.choice(industries) + "\n"
+    s = str(i+1) + "\t" + fake.company() + "\t" + random.choice(industries) + "\t" + str(numCompanies-i) + "\n"
     outfile.write(s)
 outfile.close()
 
