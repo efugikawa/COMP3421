@@ -45,7 +45,7 @@ for i in range(numCustomers):
 outfile.close()
 
 
-#Companies: company ID, company name, industry
+#Companies: company ID, company name, industry, ENR Rank
 outfile = open("companies_data.txt", "w")
 for i in range(numCompanies):
     s = str(i+1) + "\t" + fake.company() + "\t" + random.choice(industries) + "\t" + str(numCompanies-i) + "\n"
